@@ -531,3 +531,84 @@ nav a{
   }
 
 }
+/* Mobile controls hidden on desktop */
+.hamburger,
+.mobile-talk,
+.mobile-overlay {
+  display: none;
+}
+
+@media (max-width:900px){
+
+  .premium-nav{
+    width:92vw;
+    height:58px;
+    padding:0 18px;
+  }
+
+  .premium-links,
+  .desktop-arrow{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+    background:none;
+    border:none;
+    font-size:24px;
+    cursor:pointer;
+  }
+
+  .mobile-talk{
+    display:block;
+    border:none;
+    background:#111827;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    font-size:14px;
+    cursor:pointer;
+  }
+
+  .mobile-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(20px);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:40px;
+
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+
+    z-index:99999;
+  }
+
+  .mobile-overlay.active{
+    opacity:1;
+    visibility:visible;
+  }
+
+  .mobile-overlay a{
+    text-decoration:none;
+    color:#111;
+    font-size:32px;
+    font-weight:600;
+  }
+
+  .close-menu{
+    position:absolute;
+    top:30px;
+    right:30px;
+    border:none;
+    background:none;
+    font-size:34px;
+    cursor:pointer;
+  }
+}
